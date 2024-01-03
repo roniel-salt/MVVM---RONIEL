@@ -1,0 +1,50 @@
+﻿<Window x:Class="project_machshevon.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_machshevon"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800" Background="#FF0B57D0">
+    <Grid Background="#FFBECAB8" Name="grid1">
+
+        <MediaElement x:Name="sound_right" Visibility="Collapsed" LoadedBehavior="Manual" UnloadedBehavior="Manual" Source="C:\Users\ronie\Downloads\mixkit-click-melodic-tone-1129.wav"/>
+        <MediaElement x:Name="sound_wrong" Visibility="Collapsed" LoadedBehavior="Manual" UnloadedBehavior="Manual" Source="C:\Users\ronie\Downloads\mixkit-click-error-1110.wav" />
+        <MediaElement x:Name="ui_click" Visibility="Collapsed" LoadedBehavior="Manual" UnloadedBehavior="Manual" Source="C:\Users\ronie\Downloads\mixkit-cool-interface-click-tone-2568.wav" />
+
+        <TextBlock Name = "remaining" Text="qustions remaining" FontSize="20"/>
+        <TextBlock Name="text1" FontSize="60" TextAlignment="Center" HorizontalAlignment="Left" Margin="95,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="170" Height="102"/>
+        <TextBlock Name="mathSign" HorizontalAlignment="Left" TextAlignment="Center" FontSize="60" Margin="240,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="96" Width="138"/>
+        <TextBlock Name="text2" HorizontalAlignment="Left"  FontSize="60" Margin="430,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="170" Height="103"/>
+        <TextBox Name="answerTextBox" KeyDown="answerTextBox_KeyDown" HorizontalAlignment="Left" GotFocus="TextBox_GotFocus" TextAlignment="Center" FontSize="30" Margin="590,187,0,0" TextWrapping="Wrap" Text="answer" VerticalAlignment="Top" Width="100" Background="#FFDAE6D3"/>
+        <TextBlock Name="text3" HorizontalAlignment="Left" FontSize="60" Margin="510,164,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
+
+        
+        <Button Content="Submit" Click="Button_Click" HorizontalAlignment="Left" Margin="590,254,0,0" VerticalAlignment="Top" Height="25" Width="100" Background="#FFDAE6D3">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Name ="you"  HorizontalAlignment="Left" FontSize="30" Margin="251,334,0,0" TextWrapping="Wrap" Text="You can do this!" VerticalAlignment="Top" Height="55" Width="339"/>
+        <ToggleButton Name="darkModeToggle"
+                      IsChecked="False"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Top"
+                      Margin="0,10,10,0"
+                      Click="darkModeToggle_Click">
+            <ToggleButton.Style>
+                <Style TargetType="ToggleButton">
+                    <Setter Property="Content" Value="Dark Mode"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Content" Value="Light Mode"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ToggleButton.Style>
+        </ToggleButton>
+        
+    </Grid>
+</Window>
